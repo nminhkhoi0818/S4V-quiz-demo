@@ -19,7 +19,7 @@
     background: rgb(176, 146, 255, 0.27);
     box-shadow: 0px 5px 25px rgba(57, 15, 86, 0.25);
     border-radius: 20px;
-    margin: 45px 0;
+    margin: 10px 0;
 }
 
 .wrapper .infos {
@@ -57,6 +57,12 @@
     margin: auto;
 }
 
+.quiz-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .content-container .quiz-card .option {
     width: 540px;
     height: 59px;
@@ -66,10 +72,15 @@
     display: flex;
     align-items: center;
     gap: 51px;
+    cursor: pointer;
 }
 
+
 .content-container .quiz-card .quiz-question {
+    font-family: 'Lexend';
+    font-weight: 700;
     font-size: 22px;
+    color: #FFFFFF;
 }
 
 .content-container .quiz-card .option .option-aphabet {
@@ -94,6 +105,48 @@
     text-align: center;
     color: #FFFFFF;
     z-index: 10;
+}
+
+.quiz-card button {
+    background: #FFAE41;
+    border-radius: 9px;
+    color: #ffffff;
+    padding: 10px 25px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    margin: 15px 20px;
+    font-family: 'Lexend';
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.content-container .result-card p {
+    font-family: 'Lexend';
+    font-weight: 700;
+    font-size: 48px;
+}
+
+.content-container .result-score p {
+    font-family: 'Lexend';
+    font-weight: 700;
+    font-size: 36px;
+    color: #FFAE41;
+}
+
+.content-container .button-nav button {
+    padding: 10px 123px;
+    background: #5C0194;
+    border-radius: 4px;
+    font-family: 'Lexend';
+    font-weight: 600;
+    font-size: 16px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.content-container .button-nav {
+    margin-bottom: 100px;
 }
 
 .content-container .icon-1 {

@@ -3,13 +3,13 @@
     margin: 0;
 }
 
-.newCard .pre-heading {
+.newCard .after-heading {
     background: #FCF8FF;
     margin-bottom: 29px;
     padding: 4px 165px;
 }
 
-.newCard .pre-heading p {
+.newCard .after-heading p {
     font-family: 'Lexend';
     font-weight: 600;
     font-size: 16px;
