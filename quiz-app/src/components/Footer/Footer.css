@@ -1,0 +1,14 @@
+footer {
+    background: #FFAE41;
+    height: 50px;
+    display: flex;
+    width: 100%;
+}
+
+footer p {
+    font-family: 'Lexend';
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+    color: #000000;
+}
