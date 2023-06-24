@@ -6,7 +6,7 @@
 
 Frontend
 ```
-git clone https://github.com/STEAMforVietnam/quiz-demo.git
+git clone https://github.com/nminhkhoi0818/S4V-quiz-demo.git
 cd quiz-web
 npm install
 npm run dev
