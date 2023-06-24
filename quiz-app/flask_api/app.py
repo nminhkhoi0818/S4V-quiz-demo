@@ -3,12 +3,21 @@ from flask_restful import Api, Resource, reqparse, fields, marshal_with, abort
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 
+from transformers import AutoModelForCausalLM, AutoTokenizer
+import torch
+
+
+
 app = Flask(__name__)
 api = Api(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 db = SQLAlchemy(app)
 CORS(app)
 cors = CORS(app, resources={r"/question/*": {"origins": "http://127.0.0.1:5173"}})
+
+# Add tokenizer and model
+tokenizer = AutoTokenizer.from_pretrained("microsoft/DialoGPT-medium")
+model = AutoModelForCausalLM.from_pretrained("microsoft/DialoGPT-medium")
 
 
 class QuestionModel(db.Model):
@@ -121,6 +130,33 @@ def get_quiz():
         })
 
     return jsonify(quiz_data)
+
+@app.route("/chat", methods=["POST"])
+def chat():
+    data = request.get_json()
+    text = data['text']
+    print(text)
+    response = get_response(text)
+    return jsonify({'message': response})
+
+def get_response(text):
+    for step in range(5):
+        # encode the input and add end of string token
+        input_ids = tokenizer.encode(text + tokenizer.eos_token, return_tensors="pt")
+        # concatenate new user input with chat history (if there is)
+        bot_input_ids = torch.cat([chat_history_ids, input_ids], dim=-1) if step > 0 else input_ids
+        # generate a bot response
+        chat_history_ids = model.generate(
+            bot_input_ids,
+            max_length=1000,
+            do_sample=True,
+            top_p=0.95,
+            top_k=0,
+            temperature=0.75,
+            pad_token_id=tokenizer.eos_token_id
+        )
+        # return the output
+        return tokenizer.decode(chat_history_ids[:, bot_input_ids.shape[-1]:][0], skip_special_tokens=True)
 
 
 api.add_resource(Question, "/question", "/question/<int:question_id>")

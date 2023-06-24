@@ -1,6 +1,4 @@
 .quiz {
-    top: 60px;
-    bottom: 50px;
     width: 100%;
     background: url(../../assets/quiz-bg.png);
     background-size: cover;
@@ -39,6 +37,7 @@
 .wrapper .infos .info {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 10px;
 }
 

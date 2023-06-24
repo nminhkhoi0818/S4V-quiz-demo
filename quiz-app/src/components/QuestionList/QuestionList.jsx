@@ -10,7 +10,6 @@ const QuestionList = () => {
         .then((response) => response.json())
         .then((data) => {
           setData({ items: data });
-          console.log(data);
         });
     }, []);
   
@@ -36,7 +35,7 @@ const QuestionList = () => {
         <div className="pre-heading">
             <p className="nav-link">Home / Dashboard</p>
             <div className="btn-new">
-                <Link to='/new'><a>Create new question</a></Link>
+                <Link to='/new'>Create new question</Link>
             </div>
         </div>
         <div className="wrapper">
@@ -49,14 +48,14 @@ const QuestionList = () => {
                 <div>
                     {data["items"].map((question) => (
                         <React.Fragment key={question.id}>
-                        <div className="question-bar">
-                            <div className="question-content">
-                            {question.id}. {question.question}
-                            </div>
-                            <div className="question-actions">
-                            <a onClick={() => deleteItem(question)}>Delete</a>
-                            </div>
-                        </div>
+                          <div className="question-bar">
+                              <div className="question-content">
+                              {question.id}. {question.question}
+                              </div>
+                              <div className="question-actions">
+                              <a onClick={() => deleteItem(question)}>Delete</a>
+                              </div>
+                          </div>
                         </React.Fragment>
                     ))}
                 </div>

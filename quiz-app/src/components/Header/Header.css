@@ -5,12 +5,13 @@ header {
     display: flex;
     gap: 56px;
     padding-left: 165px;
+    align-items: center;
 }
 
 header p {
     font-family: 'Lexend';
     font-weight: 400;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 24px;
     color: #FFFFFF;
 }

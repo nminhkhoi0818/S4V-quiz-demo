@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import "./QuizCard.css"
 import { trophyIcon, universeIcon, clockIcon, icon1, icon2, icon3, icon4} from '../../assets'
-import { Link } from 'react-router-dom'
 
 const QuizCard = () => {
     const [activeQuestion, setActiveQuestion] = useState(0)
@@ -17,6 +16,16 @@ const QuizCard = () => {
     const [quizData, setQuizData] = useState({})
     const alphaQuestion = ['A', 'B', 'C', 'D'];
   
+    function shuffleData(array) {
+      let currIndex = array.questions.length, randIndex;
+      while(currIndex != 0) {
+        randIndex = Math.floor(Math.random() * currIndex);
+        currIndex--;
+        [array.questions[currIndex], array.questions[randIndex]] = [array.questions[randIndex], array.questions[currIndex]];
+      }
+      return array;
+    }
+
     useEffect(() => {
       fetchQuizData();
     }, []);
@@ -25,12 +34,15 @@ const QuizCard = () => {
       try {
         const response = await fetch('http://127.0.0.1:5000/api/quiz');
         const data = await response.json();
-  
-        setQuizData(data);
+
+        let dataShuffle = shuffleData(data);
+
+        setQuizData(dataShuffle);
       } catch (error) {
         console.error('Error fetching quiz data:', error);
       }
     };
+
   
     const { questions } = quizData;
     const activeQuestionData = questions && questions.length > activeQuestion ? questions[activeQuestion] : null;
@@ -98,16 +110,15 @@ const QuizCard = () => {
                     <div className="quiz-card">
                         <h2 className='quiz-question'>{question}</h2>
                         
-                        
                         {choices && choices.map((choice, index) => (
-                          <React.Fragment key={question.id}>
+                          <React.Fragment key={index}>
                             <div className={`option ${answerIndex === index ? 'selected' : ''}`} key={choice}
                             style={{ backgroundColor: answerIndex === index ? "#825BC2" : "white" }}
                             onClick={() => selectedAnswer(choice, index)}>
                             <div className="option-aphabet">{alphaQuestion[index]}.</div>
                             <div className="option-content">{choice}</div>
                             </div>
-                            </React.Fragment>
+                          </React.Fragment>
                         ))}
                     
             

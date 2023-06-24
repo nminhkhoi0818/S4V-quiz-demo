@@ -1,0 +1,83 @@
+.chat-bot {
+    background: url(../../assets/quiz-bg.png);
+    background-size: cover;
+    background-position: bottom;  
+}
+
+.wrapper-2 {
+    max-width: 600px;
+    margin: 0 auto;
+}  
+
+.text-head {
+    text-align: center;
+    padding: 25px 0;
+}
+
+.text-content {
+    margin: 0px;
+    color: #FFF;
+    text-align: center;
+    font-size: 32px;
+    font-family: Lexend;
+    font-weight: 600;
+}
+
+input[type=search], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.btn-send {
+    width: 25px;
+}
+
+.wrapper-2 .response-content {
+    font-family: 'Lexend';
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 20px;
+    margin: 10px 0;
+    background-color: #825BC2;
+    border-radius: 15px;
+    width: auto;
+    text-align: center;
+    display: flex;
+    padding: 3px 12px;
+}
+
+.wrapper-2 .user-color {
+    background-color: rgb(120, 192, 221);
+    justify-content: flex-end;
+}
+
+.wrapper-2 .chat-message {
+    max-height: 450px;
+    overflow-y: auto;
+    background: rgb(176, 146, 255, 0.27);
+    padding: 25px;
+    border-radius: 15px;
+}
+
+.wrapper-2 .chat-message .form-message {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.wrapper-2 .chat-message .form-message button {
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    background: #5285ec;
+    font-family: 'Lexend';
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 16px;
+    border: none;
+}

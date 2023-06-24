@@ -8,7 +8,8 @@ const Header = () => {
     <header>
       <img src={headerLogo} alt="" />
       <Link to="/"><p>Dashboard</p></Link>
-      <Link to="/quiz"><p>Play Quiz</p></Link>
+      <Link to="/quiz"><p>Quiz</p></Link>
+      <Link to="/chat"><p>Chatbot</p></Link>
     </header>
   )
 }

@@ -40,6 +40,15 @@ const NewCard = () => {
     setCorrectAns("");
   };
 
+  const handleKeyPress = (event) => {
+    if(event.key === 'Enter') {
+      if(choices.length < 4) {
+        setChoices([...choices , {name: choice}]);
+        setChoice("");
+      }
+    }
+  }
+
   return (
     <section className="newCard">
         <div className="after-heading">
@@ -59,6 +68,7 @@ const NewCard = () => {
             type="text" value={choice}
             placeholder="Enter choice"
             onChange={(e) => setChoice(e.target.value)}
+            onKeyDown={handleKeyPress}
             ></input>
 
             <div className="answers">
@@ -79,7 +89,10 @@ const NewCard = () => {
             
             <div className="add">
                 <a className="btn-add" onClick={() => {
-                    setChoices([...choices , {name: choice}])
+                    if(choices.length < 4) {
+                      setChoices([...choices , {name: choice}]);
+                      setChoice("");
+                    }
                 }}>Add a new answer</a>
             </div>
 
@@ -91,10 +104,10 @@ const NewCard = () => {
             <input id="correct-field" type="text" placeholder='Enter correct answer'
             value={correctAns} onChange={(e) => setCorrectAns(e.target.value)}></input>
 
-            <input type="submit" onClick={addQuestionButtonPressed}/>
+            <input type="submit" onClick={addQuestionButtonPressed} className='btn-submit'/>
 
             <div className="cancel">
-                <Link to="/"><a>Cancel and back to the Topic management</a></Link>
+                <Link to="/"><a>Cancel and back to the Dashboard</a></Link>
             </div>
     
         </div>
