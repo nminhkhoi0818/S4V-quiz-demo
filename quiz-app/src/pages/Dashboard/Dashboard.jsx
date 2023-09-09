@@ -1,12 +1,12 @@
 import React from 'react'
-import { Header, QuestionList, Footer } from "../../components"
+import { Header, Info, Footer } from '../../components'
 
 const Dashboard = () => {
   return (
     <>
-      <Header />
-      <QuestionList />
-      <Footer />
+        <Header />
+        <Info />
+        <Footer />
     </>
   )
 }

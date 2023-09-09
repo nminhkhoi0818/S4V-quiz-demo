@@ -1,16 +1,24 @@
-# Quiz App
-## Overview
-- This is a fun functional quiz app, currently using the temporary data to generate quiz cards
+# Flask Server
 
-## Installation
+## Description:
+- This is the backend for the quiz app
 
-Frontend
+## Installation:
+
+Window
+```Window
+python -m venv env
+env\Scripts\activate
+cd flask_api
+python -m pip install -r requirements.txt
+flask run
 ```
-git clone https://github.com/nminhkhoi0818/S4V-quiz-demo.git
-cd quiz-app
-npm install
-npm run dev
-```
 
-Backend
-- Please refer to the flask_api folder for instruction
+MacOS
+```MacOS
+python3 -m venv env
+source env/bin/activate
+cd flask_api
+pip install -r requirements.txt
+flask run
+```

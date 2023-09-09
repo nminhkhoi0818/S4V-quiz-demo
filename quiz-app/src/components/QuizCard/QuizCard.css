@@ -20,6 +20,29 @@
     margin: 10px 0;
 }
 
+.wrapper .nav-management {
+    display: flex;
+}
+
+.nav-management p {
+    margin-left: 0px !important;
+}
+
+.nav-management .btn-new {
+    background: #FFAE41;
+    border-radius: 4px;
+    padding: 8px 20px;
+    margin: 19px 0;
+}
+
+.nav-management .btn-new a {
+    font-family: 'Lexend';
+    font-weight: 600;
+    font-size: 14px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
 .wrapper .infos {
     width: 708px;
     height: 72px;

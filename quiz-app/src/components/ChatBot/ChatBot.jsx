@@ -25,9 +25,9 @@ const ChatBot = () => {
           { message: data.message } 
         ];
         setMessages(newList);
-        setTimeout(() => {
-          document.querySelector("#btn").scrollIntoView();
-        }, 500);
+        // setTimeout(() => {
+        //   document.querySelector("#btn").scrollIntoView();
+        // }, 500);
       })
       .catch(error => {
         console.error("Error:", error);

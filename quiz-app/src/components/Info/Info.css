@@ -1,0 +1,37 @@
+.dashboard {
+    background: url(../../assets/bg-dashboard.svg);
+    background-size: cover;
+    background-position: 60% 40%; 
+}
+
+.wrapper-3 {
+    max-width: 700px;
+    margin: 0 auto;
+}
+  
+
+h1 {
+    margin-top: 0;
+    color: #FFAE41;
+    text-align: center;
+    font-size: 36px;
+    font-family: Lexend;
+    font-style: normal;
+    font-weight: 600;
+    padding-top: 40px;
+}
+
+.infos-dashboard {
+    color: #fff;
+    font-size: 20px;
+    font-family: Lexend;
+    font-style: normal;
+    font-weight: 300;
+    padding: 20px;
+    background: rgb(176, 146, 255, 0.27);
+    border-radius: 15px;
+}
+
+.infos-dashboard h3 {
+    color: #FFAE41;
+}

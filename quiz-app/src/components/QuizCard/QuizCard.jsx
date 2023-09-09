@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import "./QuizCard.css"
 import { trophyIcon, universeIcon, clockIcon, icon1, icon2, icon3, icon4} from '../../assets'
+import { Link } from 'react-router-dom'
 
 const QuizCard = () => {
     const [activeQuestion, setActiveQuestion] = useState(0)
@@ -87,7 +88,12 @@ const QuizCard = () => {
   return (
     <section className="quiz">
         <div className="wrapper">
-            <p className="nav-links">Home /  Entertainment / Playing</p>
+            <div className="nav-management">
+              <p className="nav-links">Home /  Entertainment / Playing</p>
+              <div className="btn-new">
+                <Link to='/questions'>Questions Management</Link>
+              </div>
+            </div>  
             <div className="content-container">
             { !showResults && playAgain ? (
                 <>
