@@ -7,7 +7,7 @@
 ## Overview
 ![trivia-img-1](https://github.com/nminhkhoi0818/Test-Readme/assets/88228252/a31f35b6-6197-402e-be5a-01b42f64fb86)
 - This is a fun and functional quiz app, currently using temporary data to generate quiz cards. It also provides an AI chatbot to answer questions from users.
-- [Link Video Demo](https://www.youtube.com/watch?v=SfAhaupaoHk&list=LL&index=1&t=40s)
+- [Link Video Demo](https://www.youtube.com/watch?v=SfAhaupaoHk)
 
 ## Getting Started
 
